@@ -91,7 +91,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
 }
     func updateTable(place: GMSPlace){
         let newIndexPath = IndexPath(row: locationsArray.count, section: 0)
-        locationsArray.append(place.name!)
+        locationsArray.append(place.name)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
 }
