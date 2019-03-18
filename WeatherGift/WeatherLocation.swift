@@ -19,6 +19,6 @@ class WeatherLocation {
         
         //Alamofire.request(weatherURL).responseJSON{ response in
           //  print(response)
-        }
+        //}
     }
 }
