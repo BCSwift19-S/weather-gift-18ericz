@@ -64,6 +64,8 @@ class PageVC: UIPageViewController {
         performSegue(withIdentifier: "ToListVC", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let currentViewController = self.viewControllers?[0] as? DetailVC else {return}
+        locationsArray = currentViewController.locationsArray
         if segue.identifier == "ToListVC" {
             let destination = segue.destination as! ListVC
             destination.locationsArray = locationsArray
