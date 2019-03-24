@@ -18,6 +18,7 @@
 		E2BE4BCC2234ACBF00B31E18 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE4BCB2234ACBF00B31E18 /* ListVC.swift */; };
 		E2BE4BCE2234B6A700B31E18 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE4BCD2234B6A700B31E18 /* PageVC.swift */; };
 		E2D51FA5224820BC00F0C019 /* DayWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D51FA4224820BC00F0C019 /* DayWeatherCell.swift */; };
+		E2D51FA72248443F00F0C019 /* TimeInterval+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D51FA62248443F00F0C019 /* TimeInterval+format.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E2BE4BCB2234ACBF00B31E18 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		E2BE4BCD2234B6A700B31E18 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		E2D51FA4224820BC00F0C019 /* DayWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherCell.swift; sourceTree = "<group>"; };
+		E2D51FA62248443F00F0C019 /* TimeInterval+format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+format.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				E254975522400B43003E68D1 /* Constants.swift */,
 				E2BE4BC92234A4E700B31E18 /* DetailVC.swift */,
 				E2D51FA4224820BC00F0C019 /* DayWeatherCell.swift */,
+				E2D51FA62248443F00F0C019 /* TimeInterval+format.swift */,
 				E2BE4BCB2234ACBF00B31E18 /* ListVC.swift */,
 				E2BE4BBB2234A49900B31E18 /* Main.storyboard */,
 				E2BE4BBE2234A49B00B31E18 /* Assets.xcassets */,
@@ -252,6 +255,7 @@
 				E2A48F2F223F399A00263AFC /* WeatherLocation.swift in Sources */,
 				E2BE4BCC2234ACBF00B31E18 /* ListVC.swift in Sources */,
 				E2BE4BCE2234B6A700B31E18 /* PageVC.swift in Sources */,
+				E2D51FA72248443F00F0C019 /* TimeInterval+format.swift in Sources */,
 				E2BE4BB82234A49900B31E18 /* AppDelegate.swift in Sources */,
 				E2BE4BCA2234A4E700B31E18 /* DetailVC.swift in Sources */,
 				E254975622400B43003E68D1 /* Constants.swift in Sources */,
