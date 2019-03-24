@@ -20,5 +20,21 @@ class DayWeatherCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func update(with dailyForecast: WeatherLocation.DailyForcast, timeZone: String){
+        dayCellIcon.image = UIImage(named: dailyForecast.dailyIcon)
+        dayCellSummary.text = dailyForecast.dailySummary
+        dayCellMaxTemp.text = String(format: "%2.f", dailyForecast.dailyMaxTemp)
+        dayCellMinTemp.text = String(format: "%2.f", dailyForecast.dailyMinTemp)
+        
+        let usableDate = Date(timeIntervalSince1970: dailyForecast.dailyDate)
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        dateFormatter.timeZone = TimeZone(identifier: timeZone)
+        dateFormatter.timeZone = TimeZone(identifier: "Australia/Sydney")
+        let dateString = dateFormatter.string(from: usableDate)
+        
+        dayCellWeekDay.text = dateString
+    }
 
 }
