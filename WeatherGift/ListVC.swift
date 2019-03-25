@@ -43,6 +43,14 @@ class ListVC: UIViewController {
             addBarButton.isEnabled = false
         }
     }
+    func saveLocation(){
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(locationsArray) {
+            UserDefaults.standard.set(encoded, forKey: "locationsArray")
+        }else{
+            print("ERROR: Saving did not encode")
+        }
+    }
     @IBAction func addBarButtonPressed(_ sender: UIBarButtonItem) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
@@ -74,6 +82,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
         if editingStyle == .delete{
             locationsArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveLocation()
             
         }
     }
@@ -81,6 +90,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
         let itemToMove = locationsArray[sourceIndexPath.row]
         locationsArray.remove(at: sourceIndexPath.row)
         locationsArray.insert(itemToMove, at: destinationIndexPath.row)
+        saveLocation()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -91,12 +101,10 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
 }
     func updateTable(place: GMSPlace){
         let newIndexPath = IndexPath(row: locationsArray.count, section: 0)
-        var newWeatherLocation = WeatherLocation()
-        newWeatherLocation.name = place.name!
         let longtitude = place.coordinate.longitude
         let latitude = place.coordinate.latitude
-        newWeatherLocation.coordinates = ("\(latitude),\(longtitude)")
-        print(newWeatherLocation.coordinates)
+        let newCoordinates = ("\(latitude),\(longtitude)")
+        let newWeatherLocation = WeatherLocation(name: place.name!, coordinates: newCoordinates)
         locationsArray.append(newWeatherLocation)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
